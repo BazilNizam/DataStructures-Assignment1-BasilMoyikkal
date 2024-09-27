@@ -1,8 +1,12 @@
 # 🌟 Data Structures Adventure - Assignment 1 🌟
 
+<div style="border: 1px solid white; padding: 10px; border-radius: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; backdrop-filter: blur(10px);">
+
 ## 🧑‍🎓 **Student Details:**
 - **Name**: Basil Moyikkal
 - **Student ID**: C0908488
+
+</div>
 
 ---
 
@@ -11,12 +15,12 @@ This assignment consists of 5 coding challenges, each designed to test and explo
 
 ---
 
-<div style="border: 2px solid #4CAF50; padding: 10px; border-radius: 10px;">
+<div style="border: 1px solid white; padding: 10px; border-radius: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; backdrop-filter: blur(10px);">
 
 ### 1️⃣ The Array Artifact 🏺 (`artifactvault` Package)
 
 **Description**:  
-I developed the `ArtifactVault` class to store ancient artifacts in an array. This challenge required me to implement both linear and binary search, while keeping the array sorted for the binary search function.
+I developed the `ArtifactVault` class to store ancient artifacts in an array. This challenge required me to implement both linear and binary search while keeping the array sorted for the binary search function.
 
 **Approach**:  
 I created an array with methods to:
@@ -40,7 +44,7 @@ I created an array with methods to:
 
 ---
 
-<div style="border: 2px solid #FF5722; padding: 10px; border-radius: 10px;">
+<div style="border: 1px solid white; padding: 10px; border-radius: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; backdrop-filter: blur(10px);">
 
 ### 2️⃣ The Linked List Labyrinth 🌀 (`labyrinthpath` Package)
 
@@ -69,7 +73,7 @@ I created a node-based linked list where:
 
 ---
 
-<div style="border: 2px solid #2196F3; padding: 10px; border-radius: 10px;">
+<div style="border: 1px solid white; padding: 10px; border-radius: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; backdrop-filter: blur(10px);">
 
 ### 3️⃣ The Stack of Ancient Texts 📚 (`scrollstack` Package)
 
@@ -97,7 +101,7 @@ I created a class that:
 
 ---
 
-<div style="border: 2px solid #9C27B0; padding: 10px; border-radius: 10px;">
+<div style="border: 1px solid white; padding: 10px; border-radius: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; backdrop-filter: blur(10px);">
 
 ### 4️⃣ The Queue of Explorers 🏃‍♂️🏃‍♀️ (`explorerqueue` Package)
 
@@ -125,7 +129,7 @@ I created a circular queue that:
 
 ---
 
-<div style="border: 2px solid #FFEB3B; padding: 10px; border-radius: 10px;">
+<div style="border: 1px solid white; padding: 10px; border-radius: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; backdrop-filter: blur(10px);">
 
 ### 5️⃣ The Binary Tree of Clues 🌳 (`cluetree` Package)
 
