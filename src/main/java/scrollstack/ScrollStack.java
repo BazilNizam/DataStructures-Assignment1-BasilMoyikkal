@@ -29,6 +29,7 @@ public class ScrollStack {
 
     // Peek at the top scroll without removing it
     public void peekScroll() {
+        // Check if the stack is empty
         if (stack.isEmpty()) {
             System.out.println("No scrolls in the stack.");
         } else {
@@ -38,6 +39,7 @@ public class ScrollStack {
 
     // Check if a specific scroll title exists in the stack
     public void containsScroll(String scrollTitle) {
+        // Use the contains method of the Stack class
         if (stack.contains(scrollTitle)) {
             System.out.println("Scroll \"" + scrollTitle + "\" exists in the stack.");
         } else {
@@ -47,6 +49,7 @@ public class ScrollStack {
 
     // Print all scrolls in the stack
     public void printAllScrolls() {
+        // Check if the stack is empty
         if (stack.isEmpty()) {
             System.out.println("The scroll stack is empty.");
         } else {
