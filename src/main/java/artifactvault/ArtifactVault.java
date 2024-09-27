@@ -1,19 +1,25 @@
+// Author: Basil Moyikkal
+
+
 package artifactvault;
 
 import java.util.Arrays;
 
 public class ArtifactVault {
-    private String[] artifacts; // Array to store artifacts
-    private int size;           // Current number of artifacts
+    // Instance variables
+    private String[] artifacts;
+    // Size of the vault (number of artifacts stored)
+    private int size;
 
-    // Constructor to initialize the vault with a specified capacity
+//      Constructor to initialize the vault with a given capacity
     public ArtifactVault(int capacity) {
         artifacts = new String[capacity];
         size = 0;
     }
 
-    // Method to add an artifact to the first empty slot
+    // Method to add an artifact to the vault
     public void addArtifact(String artifact) {
+        // Check if the vault is full
         if (size < artifacts.length) {
             artifacts[size++] = artifact; // Add artifact and increment size
         } else {
@@ -21,9 +27,11 @@ public class ArtifactVault {
         }
     }
 
-    // Method to remove an artifact by its name
+    // Method to remove an artifact from the vault
     public boolean removeArtifact(String artifact) {
+        //  Iterate through the artifacts array
         for (int i = 0; i < size; i++) {
+            // Check if the artifact is found
             if (artifacts[i].equals(artifact)) {
                 artifacts[i] = artifacts[size - 1]; // Replace with last artifact
                 artifacts[size - 1] = null; // Remove last artifact
