@@ -1,45 +1,49 @@
+// Author: Basil Moyikkal
+// ID: C0908488
+
 package explorerqueue;
 
 public class Main {
     public static void main(String[] args) {
-        // Create a queue with a capacity of 5 explorers
+        // create a queue with a capacity of 5 explorers
         ExplorerQueue queue = new ExplorerQueue(5);
 
-        // Enqueue some explorers
+        // enqueue some explorers
         queue.enqueue("Indiana Jones");
         queue.enqueue("Lara Croft");
         queue.enqueue("Nathan Drake");
 
-        // Show the next explorer in line
+        // show the next explorer in line
         queue.nextExplorer();
 
-        // Dequeue an explorer (they enter the temple)
+        // dequeue an explorer (they enter the temple)
         queue.dequeue();
 
-        // Show the next explorer after one has entered the temple
+        // show the next explorer after one has entered the temple
         queue.nextExplorer();
 
-        // Enqueue more explorers
+        // enqueue more explorers
         queue.enqueue("Rick O'Connell");
         queue.enqueue("Allan Quatermain");
 
-        // Print the current queue
+        // print the current queue
         queue.printQueue();
 
-        // Try to add more explorers than the queue can handle
+        // try to add more explorers than the queue can handle
         queue.enqueue("Jack Sparrow");
-        queue.enqueue("John Carter"); // This should not be added, queue will be full
+        queue.enqueue("John Carter"); // this should not be added, queue will be full
 
-        // Dequeue all explorers
+        // dequeue all explorers
         queue.dequeue();
         queue.dequeue();
         queue.dequeue();
-        queue.dequeue(); // Should remove the last one
-
-        // Try to dequeue when the queue is empty
+        // should remove the last one
         queue.dequeue();
 
-        // Print the queue to see if it's empty
+        // try to dequeue when the queue is empty
+        queue.dequeue();
+
+        // print the queue to see if it's empty
         queue.printQueue();
     }
 }

@@ -1,74 +1,103 @@
+// Author: Basil Moyikkal
+// ID: C0908488
+
 package explorerqueue;
 
 public class ExplorerQueue {
-    private String[] queue; // Array to store explorers
-    private int front; // Index of the front of the queue
-    private int rear; // Index of the rear of the queue
-    private int size; // Current size of the queue
-    private int capacity; // Maximum capacity of the queue
+    // array to store explorers
+    private String[] queue;
+    // index of the front of the queue
+    private int front;
+    // index of the rear of the queue
+    private int rear;
+    // current size of the queue
+    private int size;
+    // maximum capacity of the queue
+    private int capacity;
 
-    // Constructor to initialize the queue with a specific capacity
+    // constructor to initialize the queue with a specific capacity
     public ExplorerQueue(int capacity) {
         this.capacity = capacity;
-        queue = new String[capacity]; // Array to hold explorers
-        front = 0; // Front starts at 0
-        rear = -1; // Rear starts at -1, meaning it's empty
-        size = 0; // Initially, the queue is empty
+        // array to hold explorers
+        queue = new String[capacity];
+        // front starts at 0
+        front = 0;
+        // rear starts at -1, meaning it's empty
+        rear = -1;
+        // initially, the queue is empty
+        size = 0;
     }
 
-    // Check if the queue is full
+    // check if the queue is full
     public boolean isFull() {
-        return size == capacity; // When size reaches capacity, it's full
+        // when size reaches capacity, it's full
+        return size == capacity;
     }
 
-    // Check if the queue is empty
+    // check if the queue is empty
     public boolean isEmpty() {
-        return size == 0; // When size is 0, the queue is empty
+        // when size is 0, the queue is empty
+        return size == 0;
     }
 
-    // Enqueue: Add an explorer to the queue
+    // enqueue: add an explorer to the queue
     public void enqueue(String explorerName) {
         if (isFull()) {
+            // print message if queue is full
             System.out.println("The queue is full. Cannot add explorer: " + explorerName);
         } else {
-            rear = (rear + 1) % capacity; // Circular increment of rear
-            queue[rear] = explorerName; // Add explorer to the rear of the queue
-            size++; // Increase the size
+            // circular increment of rear
+            rear = (rear + 1) % capacity;
+            // add explorer to the rear of the queue
+            queue[rear] = explorerName;
+            // increase the size
+            size++;
+            // print message when explorer is added
             System.out.println("Explorer added to the queue: " + explorerName);
         }
     }
 
-    // Dequeue: Remove an explorer from the front of the queue
+    // dequeue: remove an explorer from the front of the queue
     public void dequeue() {
         if (isEmpty()) {
+            // print message if queue is empty
             System.out.println("The queue is empty. No explorers to remove.");
         } else {
+            // print the explorer entering the temple
             System.out.println("Explorer entering the temple: " + queue[front]);
-            front = (front + 1) % capacity; // Circular increment of front
-            size--; // Decrease the size
+            // circular increment of front
+            front = (front + 1) % capacity;
+            // decrease the size
+            size--;
         }
     }
 
-    // Display the next explorer in line without removing them
+    // display the next explorer in line without removing them
     public void nextExplorer() {
         if (isEmpty()) {
+            // print message if queue is empty
             System.out.println("The queue is empty. No explorers in line.");
         } else {
+            // print the next explorer in line
             System.out.println("Next explorer in line: " + queue[front]);
         }
     }
 
-    // Print the entire queue
+    // print the entire queue
     public void printQueue() {
         if (isEmpty()) {
+            // print message if queue is empty
             System.out.println("The queue is empty.");
         } else {
             System.out.print("Current queue: ");
             for (int i = 0; i < size; i++) {
-                int index = (front + i) % capacity; // Circular indexing
+                // circular indexing
+                int index = (front + i) % capacity;
+                // print the explorer at the current index
                 System.out.print(queue[index] + " ");
             }
-            System.out.println(); // New line after printing the queue
+            // new line after printing the queue
+            System.out.println();
         }
     }
 }
