@@ -1,108 +1,130 @@
+// Author: Basil Moyikkal
+// ID: C0908488
+
 package cluetree;
 
-// Class representing a node in the binary tree
+// class representing a node in the binary tree
 class ClueNode {
-    String clue; // The clue stored at the node
-    ClueNode left, right; // Left and right children
+    String clue; // the clue stored at the node
+    ClueNode left, right; // left and right children
 
-    // Constructor to initialize a node with a clue
+    // constructor to initialize a node with a clue
     public ClueNode(String clue) {
         this.clue = clue;
-        left = right = null; // No children initially
+        // no children initially
+        left = right = null;
     }
 }
 
-// Binary tree class
+// binary tree class
 public class ClueTree {
-    private ClueNode root; // Root of the tree
+    private ClueNode root; // root of the tree
 
-    // Constructor to initialize an empty tree
+    // constructor to initialize an empty tree
     public ClueTree() {
+        // tree is empty
         root = null;
     }
 
-    // Insert a new clue into the binary tree
+    // insert a new clue into the binary tree
     public void insert(String clue) {
-        root = insertRec(root, clue); // Recursive insertion
+        // recursive insertion
+        root = insertRec(root, clue);
     }
 
-    // Recursive method to insert a new clue in the binary tree
+    // recursive method to insert a new clue in the binary tree
     private ClueNode insertRec(ClueNode root, String clue) {
         if (root == null) {
-            root = new ClueNode(clue); // Create a new node if the tree is empty
+            // create a new node if the tree is empty
+            root = new ClueNode(clue);
             return root;
         }
-        // Decide where to insert based on comparison (simple lexicographical order)
+        // decide where to insert based on comparison
         if (clue.compareTo(root.clue) < 0) {
-            root.left = insertRec(root.left, clue); // Insert on the left side
+            // insert on the left side
+            root.left = insertRec(root.left, clue);
         } else if (clue.compareTo(root.clue) > 0) {
-            root.right = insertRec(root.right, clue); // Insert on the right side
+            // insert on the right side
+            root.right = insertRec(root.right, clue);
         }
         return root;
     }
 
-    // In-order traversal (left, root, right)
+    // in-order traversal (left, root, right)
     public void inOrderTraversal() {
-        System.out.print("In-order traversal: ");
+        System.out.print("in-order traversal: ");
+        // call recursive method
         inOrderRec(root);
         System.out.println();
     }
 
-    // Recursive method for in-order traversal
+    // recursive method for in-order traversal
     private void inOrderRec(ClueNode root) {
         if (root != null) {
-            inOrderRec(root.left); // Traverse left subtree
-            System.out.print(root.clue + " "); // Visit root
-            inOrderRec(root.right); // Traverse right subtree
+            // traverse left subtree
+            inOrderRec(root.left);
+            // visit root
+            System.out.print(root.clue + " ");
+            // traverse right subtree
+            inOrderRec(root.right);
         }
     }
 
-    // Pre-order traversal (root, left, right)
+    // pre-order traversal (root, left, right)
     public void preOrderTraversal() {
-        System.out.print("Pre-order traversal: ");
+        System.out.print("pre-order traversal: ");
+        // call recursive method
         preOrderRec(root);
         System.out.println();
     }
 
-    // Recursive method for pre-order traversal
+    // recursive method for pre-order traversal
     private void preOrderRec(ClueNode root) {
         if (root != null) {
-            System.out.print(root.clue + " "); // Visit root
-            preOrderRec(root.left); // Traverse left subtree
-            preOrderRec(root.right); // Traverse right subtree
+            // visit root
+            System.out.print(root.clue + " ");
+            // traverse left subtree
+            preOrderRec(root.left);
+            // traverse right subtree
+            preOrderRec(root.right);
         }
     }
 
-    // Post-order traversal (left, right, root)
+    // post-order traversal (left, right, root)
     public void postOrderTraversal() {
-        System.out.print("Post-order traversal: ");
+        System.out.print("post-order traversal: ");
+        // call recursive method
         postOrderRec(root);
         System.out.println();
     }
 
-    // Recursive method for post-order traversal
+    // recursive method for post-order traversal
     private void postOrderRec(ClueNode root) {
         if (root != null) {
-            postOrderRec(root.left); // Traverse left subtree
-            postOrderRec(root.right); // Traverse right subtree
-            System.out.print(root.clue + " "); // Visit root
+            // traverse left subtree
+            postOrderRec(root.left);
+            // traverse right subtree
+            postOrderRec(root.right);
+            // visit root
+            System.out.print(root.clue + " ");
         }
     }
 
-    // Find a specific clue in the binary tree
+    // find a specific clue in the binary tree
     public boolean findClue(String clue) {
+        // call recursive method
         return findClueRec(root, clue);
     }
 
-    // Recursive method to search for a specific clue
+    // recursive method to search for a specific clue
     private boolean findClueRec(ClueNode root, String clue) {
         if (root == null) {
-            return false; // Clue not found
+            return false; // clue not found
         }
         if (root.clue.equals(clue)) {
-            return true; // Clue found
+            return true; // clue found
         }
-        // Search left or right subtree depending on comparison
+        // search left or right subtree depending on comparison
         if (clue.compareTo(root.clue) < 0) {
             return findClueRec(root.left, clue);
         } else {
@@ -110,17 +132,18 @@ public class ClueTree {
         }
     }
 
-    // Count the total number of clues in the binary tree
+    // count the total number of clues in the binary tree
     public int countClues() {
+        // call recursive method
         return countCluesRec(root);
     }
 
-    // Recursive method to count the nodes
+    // recursive method to count the nodes
     private int countCluesRec(ClueNode root) {
         if (root == null) {
-            return 0; // No clues in an empty subtree
+            return 0; // no clues in an empty subtree
         }
-        // Count current node and the nodes in left and right subtrees
+        // count current node and the nodes in left and right subtrees
         return 1 + countCluesRec(root.left) + countCluesRec(root.right);
     }
 }
