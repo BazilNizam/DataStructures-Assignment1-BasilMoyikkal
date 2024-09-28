@@ -3,8 +3,8 @@
 <div style="border: 1px solid white; padding: 10px; border-radius: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; backdrop-filter: blur(10px);">
 
 ## 🧑‍🎓 **Student Details:**
-- **Name**: Basil Moyikkal
-- **Student ID**: C0908488
+- **Name**: **Basil Moyikkal**
+- **Student ID**: **C0908488**
 
 </div>
 
