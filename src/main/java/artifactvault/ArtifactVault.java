@@ -6,67 +6,86 @@ package artifactvault;
 import java.util.Arrays;
 
 public class ArtifactVault {
-    // Instance variables
+    // this is where we keep our stuff
     private String[] artifacts;
-    // Size of the vault (number of artifacts stored)
+    // this is how many things we have in the vault
     private int size;
 
-//      Constructor to initialize the vault with a given capacity
+    // this makes the vault with a certain size
     public ArtifactVault(int capacity) {
+        // we create an empty space for artifacts
         artifacts = new String[capacity];
+        // we start with zero things in the vault
         size = 0;
     }
 
-    // Method to add an artifact to the vault
+    // this adds a new thing to the vault
     public void addArtifact(String artifact) {
-        // Check if the vault is full
+        // check if we have room for more stuff
         if (size < artifacts.length) {
-            artifacts[size++] = artifact; // Add artifact and increment size
+            // we put the new thing in and count it
+            artifacts[size++] = artifact;
         } else {
-            System.out.println("Vault is full! Cannot add more artifacts.");
+            // we can't add more stuff
+            System.out.println("vault is full! cannot add more artifacts.");
         }
     }
 
-    // Method to remove an artifact from the vault
+    // this takes away a thing from the vault
     public boolean removeArtifact(String artifact) {
-        //  Iterate through the artifacts array
+        // go through all the things in the vault
         for (int i = 0; i < size; i++) {
-            // Check if the artifact is found
+            // if we find the thing we want to remove
             if (artifacts[i].equals(artifact)) {
-                artifacts[i] = artifacts[size - 1]; // Replace with last artifact
-                artifacts[size - 1] = null; // Remove last artifact
-                size--; // Decrement size
-                return true; // Indicate successful removal
+                // swap with the last thing
+                artifacts[i] = artifacts[size - 1];
+                // remove the last thing
+                artifacts[size - 1] = null;
+                // we have one less thing now
+                size--;
+                // return true after removing
+                return true;
             }
         }
-        return false; // Artifact not found
+        // return -1, dint find
+        return false;
     }
 
-    // Method to find an artifact using linear search
+    // this looks for a thing in the vault one by one
     public int findArtifactLinear(String artifact) {
+        // go through all the things in the vault
         for (int i = 0; i < size; i++) {
+            // we found it! return the spot
             if (artifacts[i].equals(artifact)) {
-                return i; // Return index if found
+                return i;
             }
         }
-        return -1; // Artifact not found
+        // return -1, dint find
+        return -1;
     }
 
-    // Method to find an artifact using binary search
+    // this looks for a thing in the vault fast if it's sorted
     public int findArtifactBinary(String artifact) {
-        Arrays.sort(artifacts, 0, size); // Ensure the array is sorted for binary search
+        // make sure our stuff is in order
+        Arrays.sort(artifacts, 0, size);
         int left = 0, right = size - 1;
 
+        // keep looking while there's stuff to check
         while (left <= right) {
+            // find the middle thing
             int mid = left + (right - left) / 2;
+            // we found it! return the spot
             if (artifacts[mid].equals(artifact)) {
-                return mid; // Return index if found
+                return mid;
             } else if (artifacts[mid].compareTo(artifact) < 0) {
-                left = mid + 1; // Search in the right half
+                // look on the right side
+                left = mid + 1;
             } else {
-                right = mid - 1; // Search in the left half
+                // look on the left side
+                right = mid - 1;
             }
         }
-        return -1; // Artifact not found
+        // return -1, dint find
+        return -1;
     }
 }
